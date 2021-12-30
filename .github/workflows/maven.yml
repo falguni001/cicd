@@ -25,6 +25,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean test
            mvn cluecumber-report:reporting
+    - name: Report
       uses: actions/upload-artifact@v2
       with:
           name: my-artifact
