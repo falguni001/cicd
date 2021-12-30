@@ -24,7 +24,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean test
-      uses: brpaz/godacov-action@v1
+    - uses: brpaz/godacov-action@v1
       with:
         reportPath: 'path/to/cover/file'
 #           mvn cluecumber-report:reporting
