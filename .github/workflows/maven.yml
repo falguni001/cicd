@@ -26,7 +26,7 @@ jobs:
       run: mvn clean test
     - name: Report
       run: mvn cluecumber-report:reporting
-      uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v2
       with:
           name: my-artifact
           path: target/generated-report
