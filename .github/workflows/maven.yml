@@ -24,11 +24,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean test
-    - uses: brpaz/godacov-action@v1
+           mvn cluecumber-report:reporting
+      uses: actions/upload-artifact@v2
       with:
-        reportPath: 'path/to/cover/file'
-#           mvn cluecumber-report:reporting
-#    - uses: deblockt/cucumber-report-annotations-action@v1.7
-#      with:
-#         path: "target/generated-report"
-#
+          name: my-artifact
+          path: target/generated-report
