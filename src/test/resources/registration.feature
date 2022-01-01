@@ -1,4 +1,4 @@
-@regression
+@smoke
 Feature: Registration using Data table
 
   Scenario: Registration using data table

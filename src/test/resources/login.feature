@@ -1,4 +1,4 @@
-@sanity
+@smoke
 Feature: Login
 
   Scenario: Validate login page
