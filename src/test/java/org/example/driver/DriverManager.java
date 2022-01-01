@@ -33,12 +33,12 @@ public class DriverManager {
                case "chrome":
                     WebDriverManager.chromedriver().setup();
 //                    to run in ci cd
-//                   ChromeOptions options = new ChromeOptions();
-//                   options.setHeadless(true);
-//                   options.addArguments("--window-size=1920,1080");
-//                   driver = new ChromeDriver(options);
+                   ChromeOptions options = new ChromeOptions();
+                   options.setHeadless(true);
+                   options.addArguments("--window-size=1920,1080");
+                   driver = new ChromeDriver(options);
 //to run locally
-                   driver=new ChromeDriver();
+//                   driver=new ChromeDriver();
                     break;
                case "edge":
                     WebDriverManager.edgedriver().setup();
