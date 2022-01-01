@@ -9,7 +9,7 @@ public class Hooks {
     DriverManager driverManager = new DriverManager();
 
     @Before
-    public void setUp(){
+    public void setUp() throws IllegalAccessException {
         driverManager.openBrowser();
         driverManager.goToUrl();
         driverManager.maxBrowser();

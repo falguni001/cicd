@@ -8,14 +8,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
@@ -24,26 +23,33 @@ public class DriverManager {
      String browser="chrome";
      String basUrl ="https://demo.nopcommerce.com/";
 
+    public DriverManager(){
+        PageFactory.initElements(driver,this);
+    }
 
-     public void openBrowser(){
+
+     public void openBrowser() throws IllegalAccessException {
           switch (browser){
                case "chrome":
                     WebDriverManager.chromedriver().setup();
 //                    to run in ci cd
-                   ChromeOptions options = new ChromeOptions();
-                   options.setHeadless(true);
-                   options.addArguments("--window-size=1920,1080");
-                   driver = new ChromeDriver(options);
+//                   ChromeOptions options = new ChromeOptions();
+//                   options.setHeadless(true);
+//                   options.addArguments("--window-size=1920,1080");
+//                   driver = new ChromeDriver(options);
 //to run locally
-//                   driver=new ChromeDriver();
+                   driver=new ChromeDriver();
                     break;
                case "edge":
                     WebDriverManager.edgedriver().setup();
                     driver= new EdgeDriver();
                     break;
+              case "firefox":
+                  WebDriverManager.firefoxdriver().setup();
+                  driver=new FirefoxDriver();
+                  break;
                default:
-                    WebDriverManager.firefoxdriver().setup();
-                    driver=new FirefoxDriver();
+                    throw new IllegalAccessException("Unexpected browser");
           }
      }
 
@@ -105,4 +111,9 @@ public class DriverManager {
           }
      }
 
+     public int generateRandomNumber(){
+         Random random = new Random();
+         // Obtain a number between [0 - 49].
+        return random.nextInt(50);
+     }
 }

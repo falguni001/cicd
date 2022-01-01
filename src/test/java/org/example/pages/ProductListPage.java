@@ -1,11 +1,16 @@
 package org.example.pages;
 
 import org.example.driver.DriverManager;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class ProductListPage extends DriverManager {
 
+    @FindBy(css = ".page-title")
+    private WebElement textOnListPage;
+
     public String getTextFromListPage(){
-      return   driver.findElement(By.cssSelector(".page-title")).getText();
+
+        return   textOnListPage.getText();
     }
 }

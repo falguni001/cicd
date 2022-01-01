@@ -7,4 +7,5 @@ Feature: Add product to basket
   Scenario: View books
     Given I am on the home page
     When I click on the "Books"
-    Then I should see result page
+    Then I should see "Books" text on result page
+    And the url should contain with "/books"
