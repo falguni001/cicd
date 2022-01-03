@@ -1,6 +1,5 @@
-@smoke
 Feature: Registration using Data table
-
+  @reg
   Scenario: Registration using data table
     Given I am on the home page
     When I click on the "Register"
