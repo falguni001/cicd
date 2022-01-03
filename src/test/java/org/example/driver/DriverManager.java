@@ -1,9 +1,7 @@
 package org.example.driver;
 
-import com.sun.javafx.geom.Edge;
 import cucumber.api.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.managers.ChromiumDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -70,7 +68,7 @@ public class DriverManager {
                 break;
             case "edge":
                 WebDriverManager.edgedriver().setup();
-               EdgeOptions edgeOptions = new EdgeOptions();
+                EdgeOptions edgeOptions = new EdgeOptions();
                 edgeOptions.setCapability("headless", true);
                 driver= new EdgeDriver(edgeOptions);
                 break;

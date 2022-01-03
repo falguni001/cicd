@@ -1,12 +1,13 @@
 
 Feature: Login
 
+  @smoke
   Scenario: Validate login page
     Given I am on the home page
     When I click on the "Log in"
     Then I should see "Welcome, Please Sign In!" text on login page
     And the url should contain with "/login"
-@Ref
+
   Scenario: Validate login with valid email and password
     Given I am on the home page
     When I click on the "Log in"
