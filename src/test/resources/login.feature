@@ -6,7 +6,7 @@ Feature: Login
     Given I am on the home page
     When I click on the "Log in"
     Then I should see "Welcome, Please Sign In!" text on login page
-    And the url should contain with "/login"
+    And the url should contain with "/loginn"
 
   Scenario: Validate login with valid email and password
     Given I am on the home page

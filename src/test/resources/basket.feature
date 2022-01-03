@@ -1,5 +1,5 @@
 @smoke
-Feature: Add product to basket
+Feature: Basket
   As a customer,
   I want to add product to basket
   so that I can buy product
