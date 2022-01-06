@@ -8,7 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalToIgnoringCase;
 import static org.hamcrest.Matchers.is;
 
-public class BasketSteps extends DriverManager {
+public class ProductListSteps extends DriverManager {
      DriverManager driverManager = new DriverManager();
      ProductListPage productListPage = new ProductListPage();
 
