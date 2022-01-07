@@ -29,10 +29,10 @@ public class ContactUs extends DriverManager {
 
         return pageTitle.getText();}
 
-    public void enterNameEmailAndEnquiry(String Name,String Email, String Enquiry) {
-        yourName.sendKeys(Name);
-        yourEmail.sendKeys(Email);
-        yourEnquiry.sendKeys(Enquiry);
+    public void enterNameEmailAndEnquiry(String name,String email, String enquiry) {
+        yourName.sendKeys(name);
+        yourEmail.sendKeys(email);
+        yourEnquiry.sendKeys(enquiry);
 
 
     }
