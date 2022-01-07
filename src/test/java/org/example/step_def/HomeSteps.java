@@ -49,6 +49,9 @@ public class HomeSteps extends DriverManager {
             case "Log in":
                 homePage.clickOnLogIn();
                 break;
+            case "Contact us":
+                homePage.clickOnContactUs();
+                break;
             default:
                 throw new IllegalAccessException("Unexpected header button");
         }

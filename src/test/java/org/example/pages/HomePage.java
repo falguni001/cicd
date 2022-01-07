@@ -21,6 +21,9 @@ public class HomePage extends DriverManager {
     @FindBy(xpath = "//*[@class='header-links']/ul[1]/li[2]")
     private WebElement logInButton;
 
+    @FindBy(linkText = "Contact us")
+    private WebElement contactUs;
+
 
      public String getTextFromHomePage(){
 
@@ -44,5 +47,10 @@ public class HomePage extends DriverManager {
 
     public void clickOnLogIn() {
          logInButton.click();
+    }
+
+    public void clickOnContactUs() {
+         scrollTo(contactUs);
+         contactUs.click();
     }
 }
