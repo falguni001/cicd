@@ -1,4 +1,4 @@
-@contact
+@smoke
 Feature: Contact us
   As customer I
   I want to check contact us functionality
