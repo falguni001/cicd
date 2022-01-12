@@ -10,7 +10,7 @@ Feature: End to End functionality
       | vedant    | khunt    | test@gmail.com | hello@123 | hello@123       |
     And I click on the "RegisterSubmit" on registration page
     And I click on the "Books"
-    And I click on the add to basket button for "1" product
+    And I click on the add to basket button for Fahrenheit 451 by Ray Bradbury
     And I click on shopping cart
     And I click to accept term and condition
     And I click on checkout button
@@ -18,6 +18,7 @@ Feature: End to End functionality
       | country        | city   | addressLine1 | postcode | phoneNumber |
       | united kingdom | london | 58 ashridge  | wd196tl  | 07538926198 |
     And I click on continue button
+    Then I see should checkout text
     And I click on continue button
     And I select credit card
     And I click on continue button
