@@ -18,7 +18,7 @@ public class ShoppingCartPage  extends DriverManager {
         @FindBy(id = "checkout")
         private WebElement checkout;
 
-        public void clickonAddToCart(){
+        public void clickOnAddToCart(){
             addToCart.click();
         }
 
@@ -29,7 +29,8 @@ public class ShoppingCartPage  extends DriverManager {
         public  void clickOnTermsOfService(){
             termsOfCondition.click();
         }
-        public void clickOnCheckout(){
+        public void clickOnCheckout()
+        {
             checkout.click();
         }
     }

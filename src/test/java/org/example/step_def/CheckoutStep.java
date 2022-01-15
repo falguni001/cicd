@@ -6,21 +6,33 @@ import cucumber.api.java.en.Then;
 import org.example.driver.DriverManager;
 import org.example.pages.CheckoutPage;
 
+import java.util.List;
+import java.util.Map;
+
 public class CheckoutStep extends DriverManager {
     DriverManager driverManager = new DriverManager();
     CheckoutPage checkoutPage = new CheckoutPage();
+    List<Map <String ,String> >  data;
 
-    @Then("^I see should checkout text$")
-    public void i_see_should_checkout_text() throws Throwable {
-        checkoutPage.getCheckoutText();
-    }
+
+    @Then("^I  should see  checkout text$")
+    public void i_should_see_checkout_text() throws Throwable {
+
+        checkoutPage.getCheckoutText();}
+
 
     @Given("^I enter following details on checkout page$")
-    public void i_enter_following_details_on_checkout_page(DataTable arg1) throws Throwable {
-        checkoutPage.clickOnCountrySelection();
-        checkoutPage.clickOnAddAddress();
-        checkoutPage.clickOnPostalCode();
-        checkoutPage.clickOnPhoneNo();}
+    public void i_enter_following_details_on_checkout_page(DataTable dataTable) throws Throwable {
+
+        data =  dataTable.asMaps(String.class, String.class);
+        System.out.println(data);
+        checkoutPage.selectCountrySelection(data.get(0).get("country"));
+        checkoutPage.addCity(data.get(0).get("city"));
+        checkoutPage.addAddress(data.get(0).get("addressLine1 "));
+        checkoutPage.addPostalCode(data.get(0).get("postcode"));
+        checkoutPage.addPhoneNo(data.get(0).get("phoneNumber"));
+    }
+
         @Given("^I click on continue button$")
         public void i_click_on_continue_button() throws Throwable {
 
@@ -33,9 +45,10 @@ public class CheckoutStep extends DriverManager {
 
     @Given("^I select credit card$")
     public void i_select_credit_card() throws Throwable {
-checkoutPage.clickOnRadioBtn();}{
-        checkoutPage.clickOnRadioBtn();
-    }
+     checkoutPage.clickOnRadioBtn();}
+
+
+
 
         @Given("^I click on morecontinue button$")
         public void i_click_on_morecontinue_button() throws Throwable {

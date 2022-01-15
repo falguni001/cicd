@@ -9,10 +9,10 @@ public class ShoppingCartStep  extends DriverManager {
 DriverManager driverManager = new DriverManager();
 ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
 
-    @Given("^I click on the add to basket button for Fahrenheit (\\d+) by Ray Bradbury$")
-    public void i_click_on_the_add_to_basket_button_for_Fahrenheit_by_Ray_Bradbury(int arg1) throws Throwable {
+    @Given("^I click on the add to basket button for Fahrenheit by Ray Bradbury$")
+    public void i_click_on_the_add_to_basket_button_for_Fahrenheit_by_Ray_Bradbury() throws Throwable {
 
-        shoppingCartPage.clickonAddToCart();}
+        shoppingCartPage.clickOnAddToCart();}
 
 
     @Given("^I click on shopping cart$")

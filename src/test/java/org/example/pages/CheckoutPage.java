@@ -35,11 +35,11 @@ public class CheckoutPage  extends DriverManager {
 
 
 
-    @FindBy (xpath = "//*[@id=\"paymentmethod_1\"]")
-    private WebElement selectRadioBtn;
+   // @FindBy (id = "paymentmethod_1")
+  // private WebElement selectRadioBtn;
 
-    @FindBy (xpath = "//button[@onclick='PaymentMethod.save()']")
-    private WebElement moreContinue ;
+  // @FindBy (xpath = "//button[@onclick='PaymentMethod.save()']")
+   // private WebElement moreContinue ;
 
 
     @FindBy (id = "creditCardType")
@@ -58,24 +58,24 @@ public class CheckoutPage  extends DriverManager {
     private WebElement lastContinue;
 
     public String getCheckoutText(){
-    return checkoutText.getText();
-}
-public void clickOnCountrySelection(){
+     return checkoutText.getText();
+    }
+public void selectCountrySelection(String countryName){
     Select select = new Select(countrySelection);
-    select.selectByValue("233");
+    select.selectByVisibleText(countryName);
 }
-public void clickOnAddCity(){
-    addCity.sendKeys("london ");
+public void addCity(String cityName){
+    addCity.sendKeys(cityName);
 
 }
-public  void clickOnAddAddress(){
-    addAddress.sendKeys("58 ashridge");
+public  void addAddress(String address ){
+    addAddress.sendKeys(address);
 }
-public void clickOnPostalCode(){
-    addPostalCode.sendKeys("wd196tl");
+public void addPostalCode(String postalCode){
+    addPostalCode.sendKeys(postalCode);
 }
-public void clickOnPhoneNo(){
-    addPhoneNo.sendKeys("07538926198");
+public void addPhoneNo(String phone ){
+    addPhoneNo.sendKeys(phone);
 }
 
 public void clickOnContinueBtn(){
@@ -85,7 +85,8 @@ public void clickOnAgainContinueBtn(){
     againContinueBtn.click();
 }
 public void clickOnRadioBtn(){
-        selectRadioBtn.click();
+
+        //selectRadioBtn.click();
 }
 public void clickOnCardType(){
         Select se = new Select(selectCardType);
@@ -101,9 +102,13 @@ public void clickOnCardNo(){
 public void clickOnCardCode(){
         cardCode.sendKeys("001");
 }
-public void clickOnMoreContinue(){
-        moreContinue.click();
+
+public void clickOnMoreContinue() {
+       // waitForElementVisibility(moreContinue,30,"notvisibla");
+
+       // moreContinue.click();
 }
+
 public void clickOnLastContinue(){
         lastContinue.click();
 }
