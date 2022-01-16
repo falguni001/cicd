@@ -19,6 +19,8 @@ public class ShoppingCartPage  extends DriverManager {
         private WebElement checkout;
 
         public void clickOnAddToCart(){
+            waitForElementVisibility(addToCart,30,"notvisibla");
+
             addToCart.click();
         }
 
@@ -27,6 +29,9 @@ public class ShoppingCartPage  extends DriverManager {
         }
 
         public  void clickOnTermsOfService(){
+            waitForElementVisibility(termsOfCondition,30,"notvisibla");
+
+
             termsOfCondition.click();
         }
         public void clickOnCheckout()
