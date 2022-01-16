@@ -45,7 +45,8 @@ public class CheckoutStep extends DriverManager {
 
     @Given("^I select credit card$")
     public void i_select_credit_card() throws Throwable {
-     checkoutPage.clickOnRadioBtn();}
+
+        checkoutPage.clickOnRadioBtn();}
 
 
 
@@ -57,11 +58,14 @@ public class CheckoutStep extends DriverManager {
     }
 
     @Given("^I enter following details on the payment page$")
-    public void i_enter_following_details_on_the_payment_page(DataTable arg1) throws Throwable {
-checkoutPage.clickOnCardType();
-checkoutPage.clickOnCardHolder();
-checkoutPage.clickOnCardNo();
-checkoutPage.clickOnCardCode();}
+    public void i_enter_following_details_on_the_payment_page(DataTable dataTable) throws Throwable {
+
+        data=dataTable.asMaps(String.class ,String.class);
+        System.out.println(data);
+checkoutPage.addCardType();
+checkoutPage.addCardHolder(data.get(0).get("cardName"));
+checkoutPage.addCardNo(data.get(0).get("cardNumber"));
+checkoutPage.addCardCode(data.get(0).get("cardCode"));}
 
         @Given("^I click on lastcountinue  button$")
         public void i_click_on_lastcountinue_button() throws Throwable {

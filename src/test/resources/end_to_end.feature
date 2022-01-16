@@ -7,24 +7,24 @@ Feature: End to End functionality
     And I select gender "Male"
     And I enter following details to register
       | firstName | lastName | email          | password  | confirmPassword |
-      | vedant    | khunt    | test1@gmail.com | hello@123 | hello@123       |
+      | vedant    | khunt    | test111@gmail.com | hello@123 | hello@123       |
     And I click on the "RegisterSubmit" on registration page
     And I click on the "Books"
     And I click on the add to basket button for Fahrenheit by Ray Bradbury
     And I click on shopping cart
     And I click to accept term and condition
     And I click on checkout button
-    And I enter following details on checkout page
-      | country        | city   | addressLine1 | postcode | phoneNumber |
-      | United Kingdom | london | 58 ashridge  | wd196tl  | 07538926198 |
+   And I enter following details on checkout page
+     | country        | city   | addressLine1 | postcode | phoneNumber |
+     | United Kingdom | london | 58 ashridge  | wd196tl  | 07538926198 |
     And I click on continue button
-    Then I  should see  checkout text
-    And I click on continue button
-    And I select credit card
-#    And I click on continue button
-#    And I enter following details on the payment page
-#      | cardName | cardNumber       | cardCode |
-#      | nk khunt | 4444333322221111 | 001      |
+   Then I  should see  checkout text
+   And I click on continue button
+   And I select credit card
+#   And I click on continue button
+#  And I enter following details on the payment page
+#     | cardName | cardNumber       | cardCode |
+#     | nk khunt | 4444333322221111 | 001      |
 #    When I click on confirm button
 #    Then I should see "Thank you" text on confirmation page
 #    And I should see "Your order has been successfully processed!" text on confirmation page

@@ -35,11 +35,11 @@ public class CheckoutPage  extends DriverManager {
 
 
 
-   // @FindBy (id = "paymentmethod_1")
-  // private WebElement selectRadioBtn;
+    @FindBy (id = "paymentmethod_1")
+   private WebElement selectRadioBtn;
 
-  // @FindBy (xpath = "//button[@onclick='PaymentMethod.save()']")
-   // private WebElement moreContinue ;
+   @FindBy (xpath = "//button[@onclick='PaymentMethod.save()']")
+   private WebElement moreContinue ;
 
 
     @FindBy (id = "creditCardType")
@@ -81,35 +81,45 @@ public void addPhoneNo(String phone ){
 public void clickOnContinueBtn(){
     continueBtn.click();
 }
+
 public void clickOnAgainContinueBtn(){
+    waitForElementVisibility(againContinueBtn,30,"notvisibl");
+
     againContinueBtn.click();
 }
 public void clickOnRadioBtn(){
-
-        //selectRadioBtn.click();
+    waitForElementVisibility(selectRadioBtn,40,"notvisibla");
+        selectRadioBtn.click();
 }
-public void clickOnCardType(){
+public void addCardType(){
         Select se = new Select(selectCardType);
         se.selectByValue("visa");
+
 }
-public void clickOnCardHolder(){
-        cardHolderName.sendKeys("nk khunt");
+public void addCardHolder(String cardHolder){
+    cardHolderName.sendKeys(cardHolder);
 }
 
-public void clickOnCardNo(){
-        cardNo.sendKeys("4444333322221111");
+public void addCardNo(String cardNumber){
+    cardNo.sendKeys(cardNumber);
+
+
 }
-public void clickOnCardCode(){
-        cardCode.sendKeys("001");
+public void addCardCode(String cardCo){
+        cardCode.sendKeys(cardCo);
+
 }
 
 public void clickOnMoreContinue() {
-       // waitForElementVisibility(moreContinue,30,"notvisibla");
+        waitForElementVisibility(moreContinue,40,"notvisibla");
 
-       // moreContinue.click();
+        moreContinue.click();
 }
 
 public void clickOnLastContinue(){
-        lastContinue.click();
+
+    waitForElementVisibility(lastContinue,30,"notvisibla");
+
+    lastContinue.click();
 }
 }
